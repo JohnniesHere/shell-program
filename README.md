@@ -1,4 +1,4 @@
-Authorize: Jonathan Elgarisi ID: 315428326
+Authorize: Jonathan Elgarisi
 
 \## Shell Program 
 This is a simple shell program written in C for Linux-based machines. It reads commands from the user or a script file,
