@@ -77,8 +77,8 @@ immediately.
          written to EE, and ls will not be executed.
 
 \## Output
- According to your commands.
- Errors will be provide information if occurs.
+According to your commands.
+Errors will be provide information if occurs.
 
 \## Files
  - ex1.c: The main file containing the shell program.
