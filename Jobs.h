@@ -1,4 +1,4 @@
-//
+//315428326
 #ifndef UNTITLED6_JOBS_H
 #define UNTITLED6_JOBS_H
 
@@ -11,8 +11,9 @@
 #include "string.h"
 
 #define MAX_CMD_LEN  1025
+#define MAX_JOBS 100
 
-int glob_id =0;
+
 typedef struct Job {
     int id;
     pid_t pid;
@@ -23,7 +24,7 @@ typedef struct Job {
 Job *jobs = NULL;
 
 
-int highest_job_id = 0;
+
 
 void add_job(pid_t pid, const char *command) {
     Job *new_job = (Job *)malloc(sizeof(Job));
@@ -84,9 +85,9 @@ void print_jobs() {
     for (int i = 0; i < count; i++) {
         printf("[%d]               %s &\n", jobArray[i]->id, jobArray[i]->command);
     }
-
-    // Free the array
-    free(jobArray);
+    if(jobArray != NULL) {
+        free(jobArray);
+    }
 }
 
 // Function to remove completed jobs from the list---------------------------------------------------------------------
@@ -107,10 +108,26 @@ void remove_completed_jobs() {
             }
             Job *temp = current;
             current = current->next;
-            free(temp);
+            if (temp != NULL) {
+                free(temp);
+            }
         }
     }
 }
+
+//iterate through all jobs  and kill the jobs that are still running
+void kill_all_jobs() {
+    Job *current = jobs;
+    while (current != NULL) {
+        kill(current->pid, SIGKILL);
+        if (current->next != NULL) {
+            current = current->next;
+        } else {
+            break;
+        }
+    }
+}
+
 
 
 
