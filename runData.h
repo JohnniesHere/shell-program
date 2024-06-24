@@ -1,6 +1,4 @@
-//
-// Created by student on 6/13/24.
-//
+//315428326
 
 #ifndef UNTITLED6_RUNDATA_H
 #define UNTITLED6_RUNDATA_H
