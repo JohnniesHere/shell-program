@@ -1,4 +1,4 @@
-//315428326
+
 #include <stdlib.h>
 #ifndef UNTITLED6_STACK_H
 #define UNTITLED6_STACK_H
